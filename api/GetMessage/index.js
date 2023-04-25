@@ -16,7 +16,10 @@ module.exports = async function (context, req) {
     }
 
     context.res = {
-        // status: 200, /* Defaults to 200 */
-        body: message
+      // status: 200, /* Defaults to 200 */
+      body: message,
+      headers: {
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+      },
     };
 }
